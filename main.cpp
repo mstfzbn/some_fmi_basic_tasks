@@ -16,12 +16,11 @@ void myFunc(double *a,int rows,int cols){
     }
 }
 
-void show_mtrx(int * matrix, int & n,int & steps, int & row, int & column)
+void show_mtrx( int * matrix, int & size_of_square_matrix, int & steps, int & row, int & column )
 {
-    for(int stp_c{0}; stp_c < steps; ++stp_c)  //iterating on steps
-    {            
-
-            cout << *(matrix+ row*n + column) << " ";
+    for( int stp_c{0}; stp_c < steps; ++stp_c )  //iterating on steps
+    {       
+            cout << *(matrix+ row*size_of_square_matrix + column) << " ";
                 
             row--;
             column++;
@@ -118,6 +117,25 @@ int main(int argc, const char** argv)
             column = n - steps ;
         }
 
+
+        int * point_to_mtrx = new int[10];
+
+        void * to_smoething = point_to_mtrx;
+
+        for(size_t i{0}; i < 10; ++i)
+        {
+            *(point_to_mtrx + i) = i;
+        }
+
+        for(size_t i{0}; i < 10; ++i)
+        {
+            cout << *(point_to_mtrx + i)<< endl;
+        }
+
+        cout << *(static_cast<int*>(to_smoething)) << endl;
+        cout << *point_to_mtrx << endl;
+
+        delete point_to_mtrx;
 
         ///////////////////////////
 
