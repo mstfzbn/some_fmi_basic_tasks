@@ -137,7 +137,7 @@ int main(int argc, const char** argv)
 
         delete point_to_mtrx;
 
-        ///////////////////////////
+        ////
 
 
     return 0;
